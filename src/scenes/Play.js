@@ -19,7 +19,12 @@ class Play extends Phaser.Scene {
         this.add.rectangle(37,42,566,64,0x00FF00).setOrigin(0,0);
 
         //add player 1
-        this.p1Rocket = new Rocket(this, game.config.width/2, 431, 'rocket').setScale(0.5,0.5).setOrigin(0,0);
+        this.p1Rocket = new Rocket(this, game.config.width/2, 431, 'rocket',0).setScale(0.5,0.5).setOrigin(0,0);
+        //add ship#1
+        this.ship1 = new Spaceship(this, game.config.width+192, 132, 'spaceship',30,0).setOrigin(0,0);
+        this.ship2 = new Spaceship(this, game.config.width+96, 196, 'spaceship',20,0).setOrigin(0,0);
+        this.ship3 = new Spaceship(this, game.config.width, 260, 'spaceship',10,0).setOrigin(0,0);
+
 
         //define keyboard
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -31,5 +36,8 @@ class Play extends Phaser.Scene {
         //scroll starfield
         this.starfield.tilePositionX -= 4;
         this.p1Rocket.update();
+        this.ship1.update();
+        this.ship2.update();
+        this.ship3.update();
     }
 }
