@@ -4,7 +4,12 @@ var config = {
     height: 480,
     scene: [Menu,Play],
 };
-
 var game = new Phaser.Game(config)
+
+// define game settings
+game.settings = {
+    spaceshipSpeed: 3,
+    gameTimer: 60000    
+}
 
 var keyF,keyLEFT,keyRIGHT;
